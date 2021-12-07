@@ -3,7 +3,7 @@ gitea and nginx reverse proxy sample config file
 
 ```
 server {
-    if ($host = git.rev.web.id) {
+    if ($host = git.contoh.com) {
         return 301 https://$host$request_uri;
     } 
     listen       80;
@@ -12,7 +12,7 @@ server {
 
 server {
     listen       443 ssl;
-    server_name git.rev.web.id;
+    server_name git.contoh.com;
     
     # SSL configuration
     ssl_certificate /etc/letsencrypt/live/git.contoh.com/fullchain.pem; 
